@@ -7,6 +7,8 @@ const variableStyleTitle = "Bonjour avec la variable 'styleVariable'";
 const styleVariable = { color: "brown", backgroundColor: "grey" };
 const clickMeText = "click me !";
 const clickMe = "clique moi !"
+const showTitle = true
+const TitleStyle = {color: "brown", fontSize: "5rem"}
 
 function App() {
   const handleClick = (e) => {
@@ -18,6 +20,8 @@ function App() {
   return (
     <>
     <input type="text" />
+      <p>{showTitle && <h7 className="Title" style={TitleStyle}>Title</h7>}</p>
+      {showTitle ? <h7 className="Title" style={TitleStyle}>Title</h7> : <p>Titre caché</p>}
       <h5 className="title5">{normalTitle}</h5>
       <h1 className="title4">{h1Title}</h1>
       <h2 className="title" dangerouslySetInnerHTML={{ __html: strongTitle }}></h2>
