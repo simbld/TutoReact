@@ -24,7 +24,7 @@ function App() {
       <p>{showTitle && <h7 className="Title" style={TitleStyle}>Title</h7>}</p>
       {showTitle ? <h7 className="Title" style={TitleStyle}>Title</h7> : <p>Titre caché</p>}
       <TodoList />
-      <Title color="green">Mon composant children</Title>
+      <Title color="green" id="monid" className="demo" data-demo="demo">Mon composant children</Title>
       <h5 className="title5">{normalTitle}</h5>
       <h2 className="title" dangerouslySetInnerHTML={{ __html: strongTitle }}></h2>
       <h3 className="title2">{classTitle}</h3>
@@ -39,15 +39,11 @@ function App() {
   );
 }
 
-function Title ({color, children, hidden}) {
+function Title ({color, children, hidden, ...props}) {
   if (hidden) {
     return null
   }
 
-  const props = {
-    id: 'monid',
-    className: 'maclasse'
-  }
   return <h1 style={{color: color}} {...props}>{children}</h1>
 }
 
