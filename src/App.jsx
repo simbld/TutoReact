@@ -1,3 +1,5 @@
+import TodoList from "./TodoList";
+
 const strongTitle = "<strong>Bonjour Strong avec dangerouslySetInnerHTML</strong>";
 const classTitle = "Bonjour className avec les attributs";
 const styleTitle = "Bonjour avec style, en JSX c'est forcement un objet a l'intérieur";
@@ -22,6 +24,7 @@ function App() {
     <input type="text" />
       <p>{showTitle && <h7 className="Title" style={TitleStyle}>Title</h7>}</p>
       {showTitle ? <h7 className="Title" style={TitleStyle}>Title</h7> : <p>Titre caché</p>}
+      <TodoList />
       <h5 className="title5">{normalTitle}</h5>
       <h1 className="title4">{h1Title}</h1>
       <h2 className="title" dangerouslySetInnerHTML={{ __html: strongTitle }}></h2>
@@ -37,25 +40,4 @@ function App() {
   );
 }
 
-function ChildComponent() {
-  const handleClick = (event) => {
-    event.stopPropagation();
-    alert('Le bouton a été cliqué');
-  };
-
-  return <button onClick={handleClick}>{clickMe}</button>;
-}
-
-function ParentComponent() {
-  const handleClick = () => {
-    alert('Le composant parent a été cliqué');
-  };
-
-  return (
-    <div onClick={handleClick}>
-      <ChildComponent />
-    </div>
-  );
-}
-
-export default App; ParentComponent;
+export default App;
