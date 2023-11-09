@@ -24,7 +24,7 @@ function App() {
       <p>{showTitle && <h7 className="Title" style={TitleStyle}>Title</h7>}</p>
       {showTitle ? <h7 className="Title" style={TitleStyle}>Title</h7> : <p>Titre caché</p>}
       <TodoList />
-      <Title color="red"/>
+      <Title color="green">Mon composant children</Title>
       <h5 className="title5">{normalTitle}</h5>
       <h2 className="title" dangerouslySetInnerHTML={{ __html: strongTitle }}></h2>
       <h3 className="title2">{classTitle}</h3>
@@ -39,9 +39,9 @@ function App() {
   );
 }
 
-function Title ({color}) {
+function Title ({color, children}) {
 
-  return <h1 style={{color: color}}>Bonjour Title</h1>
+  return <h1 style={{color: color}}>{children}</h1>
 }
 
 export default App;
