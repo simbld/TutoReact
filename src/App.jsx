@@ -3,7 +3,6 @@ import TodoList from "./TodoList";
 const strongTitle = "<strong>Bonjour Strong avec dangerouslySetInnerHTML</strong>";
 const classTitle = "Bonjour className avec les attributs";
 const styleTitle = "Bonjour avec style, en JSX c'est forcement un objet a l'intérieur";
-const h1Title = "Bonjour h1";
 const normalTitle = "Bonjour normal";
 const variableStyleTitle = "Bonjour avec la variable 'styleVariable'";
 const styleVariable = { color: "brown", backgroundColor: "grey" };
@@ -25,8 +24,8 @@ function App() {
       <p>{showTitle && <h7 className="Title" style={TitleStyle}>Title</h7>}</p>
       {showTitle ? <h7 className="Title" style={TitleStyle}>Title</h7> : <p>Titre caché</p>}
       <TodoList />
+      <Title color="green">Mon composant children</Title>
       <h5 className="title5">{normalTitle}</h5>
-      <h1 className="title4">{h1Title}</h1>
       <h2 className="title" dangerouslySetInnerHTML={{ __html: strongTitle }}></h2>
       <h3 className="title2">{classTitle}</h3>
       <h4 className="title3" style={{ color: "red", backgroundColor: "purple" }}>{styleTitle}</h4>
@@ -38,6 +37,11 @@ function App() {
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore quisquam, voluptatibus consequatur corporis ipsam porro facere cum placeat quod autem optio inventore dolore nulla beatae laudantium quidem officiis. Corporis, numquam?</p> 
   </>
   );
+}
+
+function Title ({color, children}) {
+
+  return <h1 style={{color: color}}>{children}</h1>
 }
 
 export default App;
