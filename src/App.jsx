@@ -39,12 +39,12 @@ function App() {
   );
 }
 
-function Title ({color, children, hidden, ...props}) {
+function Title ({color, hidden, ...props}) {
   if (hidden) {
     return null
   }
 
-  return <h1 style={{color: color}} {...props}>{children}</h1>
+  return <h1 style={{color: color}} {...props}/>
 }
 
 export default App;
