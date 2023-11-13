@@ -1,6 +1,6 @@
 import TodoList from "./TodoList";
-import Count from "./Count";
-
+import CountApp from "./CountApp";
+import Increment3 from "./Increment3";
 
 
 
@@ -12,9 +12,9 @@ function App() {
 
       <TodoList />
      
-      <Count />
+      <CountApp />
 
-
+      <Increment3 />
   </>
   );
 }
