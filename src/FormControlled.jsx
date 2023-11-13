@@ -8,9 +8,9 @@ function FormApp() {
     const reset = () => {
     setFirstname('')
     }
-
+    console.log('render')
     return <form>
-        <input type="text" name="firstname" value={firstname} onChange={handleChange}/>
+        <input type="text" name="firstname"/>
         {firstname}
     <button onClick={reset} type="button">Reset</button>
     </form>
