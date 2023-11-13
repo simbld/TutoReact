@@ -1,7 +1,0 @@
-import {useState} from "react";
-
-function FormApp() {
-    return <form>
-        <input type="text name="firstName/>
-    </form>
-}
