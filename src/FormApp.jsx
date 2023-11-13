@@ -5,10 +5,14 @@ function FormApp() {
     const handleChange = (e) => {
         setFirstname(e.target.value)
     }
+    const reset = () => {
+    setFirstname('')
+    }
 
     return <form>
         <input type="text" name="firstname" value={firstname} onChange={handleChange}/>
         {firstname}
+    <button onClick={reset} type="button">Reset</button>
     </form>
 }
 
