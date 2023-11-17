@@ -1,19 +1,26 @@
-import {useState} from "react";
+/* eslint-disable react/button-has-type */
+/* eslint-disable no-console */
+import { useState } from "react";
 
-function FormApp() {
-    const [firstname, setFirstname] = useState('John Doe')
-    const handleChange = (e) => {
-        setFirstname(e.target.value)
-    }
-    const reset = () => {
-    setFirstname('')
-    }
-    console.log('render')
-    return <form>
-        <input type="text" name="firstname"/>
-        {firstname}
-    <button onClick={reset} type="button">Reset</button>
+function FormControlled() {
+  const [value, setValue] = useState("");
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
+  const reset = () => {
+    setValue("");
+  };
+  console.log("render");
+  return (
+    <form>
+      {/* pour un champ contrôlé, il faut value et onChange, et si il y a value alors il faut qu'il y est une chaîne de caractère vide useState(' ') */}
+      <input type="text" value={value} onChange={handleChange} />
+      {value}
+      <button type="reset" onClick={reset}>
+        Reset
+      </button>
     </form>
+  );
 }
 
-export default FormApp
+export default FormControlled;
