@@ -5,10 +5,12 @@ import FormControlled from "./FormControlled";
 import NotControlFormData from "./NotControlFormData";
 import FirstName from "./FirstName";
 import TextArea from "./TextArea";
+import ReverseDataFlow from "./ReverseDataFlow";
 
 function App() {
   return (
     <>
+      <ReverseDataFlow />
       <TextArea />
       <FirstName />
       <NotControlFormData />
